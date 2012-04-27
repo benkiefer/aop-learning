@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>aop-learning</artifactId>
+        <groupId>org.burgers</groupId>
+        <version>1.0</version>
+    </parent>
+
+    <packaging>pom</packaging>
+    <artifactId>aop-learning-parent</artifactId>
+
+    <properties>
+        <groovy.version>1.8.6</groovy.version>
+        <gmaven.version>1.3</gmaven.version>
+        <spring.version>3.1.1.RELEASE</spring.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>${groovy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.gmaven.runtime</groupId>
+                <artifactId>gmaven-runtime-1.7</artifactId>
+                <version>${gmaven.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>${gmaven.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                        <version>${groovy.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <providerSelection>1.7</providerSelection>
+                        </configuration>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
