@@ -9,13 +9,13 @@ import org.aspectj.lang.annotation.After
 import org.aspectj.lang.annotation.Around
 import org.aspectj.lang.ProceedingJoinPoint
 import org.aspectj.lang.annotation.AfterThrowing
-import org.burgers.aop.learning.aspectj.annotations.KaboomException
+import org.burgers.aop.learning.common.KaboomException
 
 @Aspect
 @Component
 class MyAspect {
 //    defining the pointcut separately
-    @Pointcut("execution(* org.burgers.aop.learning.aspectj.annotations.MyService.doSomethingBefore(..))")
+    @Pointcut("execution(* org.burgers.aop.learning.common.MyService.doSomethingBefore(..))")
     void doSomethingBefore(){ }
 
 //    using the pointcut defined above
@@ -25,12 +25,12 @@ class MyAspect {
     }
 
 //    creates the pointcut for you
-    @After("execution(* org.burgers.aop.learning.aspectj.annotations.MyService.doSomethingAfter(..))")
+    @After("execution(* org.burgers.aop.learning.common.MyService.doSomethingAfter(..))")
     void doItAfter(JoinPoint joinPoint){
         joinPoint.getArgs()[0].actions << "after"
     }
 
-    @Around("execution(* org.burgers.aop.learning.aspectj.annotations.MyService.doSomethingAround(..))")
+    @Around("execution(* org.burgers.aop.learning.common.MyService.doSomethingAround(..))")
     void doItAround(ProceedingJoinPoint joinPoint){
         List<String> arg = joinPoint.getArgs()[0].actions
         arg << "before"

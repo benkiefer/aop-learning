@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.junit.Test
 
 import static junit.framework.Assert.fail
-import org.burgers.aop.learning.aspectj.annotations.MyService
-import org.burgers.aop.learning.aspectj.annotations.MyThing
+import org.burgers.aop.learning.common.MyThing
+import org.burgers.aop.learning.common.MyService
 
 @RunWith(SpringJUnit4ClassRunner)
-@ContextConfiguration(locations=["classpath:contexts/ApplicationContext.xml"])
+@ContextConfiguration(locations=["classpath:contexts/AnnotationContext.xml"])
 class MyServiceImplTest {
     @Autowired
     MyService myService

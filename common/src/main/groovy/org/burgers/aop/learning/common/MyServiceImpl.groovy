@@ -1,4 +1,4 @@
-package org.burgers.aop.learning.aspectj.annotations
+package org.burgers.aop.learning.common
 
 import org.springframework.stereotype.Component
 
