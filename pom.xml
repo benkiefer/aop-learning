@@ -12,6 +12,7 @@
         <module>parent</module>
         <module>aspectj-annotations</module>
         <module>common</module>
+        <module>spring-aop</module>
     </modules>
 
 </project>
