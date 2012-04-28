@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>aop-learning-spring</artifactId>
+    <artifactId>aop-learning-aspectj-annotations</artifactId>
 
     <dependencies>
 

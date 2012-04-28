@@ -10,7 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>parent</module>
-        <module>spring</module>
+        <module>aspectj-annotations</module>
     </modules>
 
 </project>
