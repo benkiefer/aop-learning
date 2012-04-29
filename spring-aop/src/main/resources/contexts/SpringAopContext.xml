@@ -16,11 +16,12 @@
     <aop:config>
         <aop:aspect ref="myAspect">
             <aop:pointcut id="beforePointCut" expression="execution(* org.burgers.aop.learning.common.MyService.doSomethingBefore(..))"/>
-            <aop:pointcut id="afterPointCut" expression="execution(* org.burgers.aop.learning.common.MyService.doSomethingAfter(..))"/>
-            <aop:pointcut id="aroundPointCut" expression="execution(* org.burgers.aop.learning.common.MyService.doSomethingAround(..))"/>
             <aop:before method="before" pointcut-ref="beforePointCut"/>
+
+            <aop:pointcut id="afterPointCut" expression="execution(* org.burgers.aop.learning.common.MyService.doSomethingAfter(..))"/>
             <aop:after method="after" pointcut-ref="afterPointCut"/>
-            <aop:around method="around" pointcut-ref="aroundPointCut"/>
+
+            <aop:around method="around" pointcut="execution(* org.burgers.aop.learning.common.MyService.doSomethingAround(..))"/>
             <aop:after-throwing throwing="error" method="afterThrowing" pointcut="execution(* org.burgers.aop.learning.common.MyService.doSomethingAfterThrowing(..))"/>
         </aop:aspect>
     </aop:config>
