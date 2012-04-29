@@ -24,6 +24,9 @@
             <aop:around method="around" pointcut="execution(* org.burgers.aop.learning.common.MyService.doSomethingAround(..))"/>
             <aop:after-throwing throwing="error" method="afterThrowing" pointcut="execution(* org.burgers.aop.learning.common.MyService.doSomethingAfterThrowing(..))"/>
         </aop:aspect>
+        <aop:aspect ref="myPerformanceAspect">
+            <aop:around method="performance" pointcut="execution(* org.burgers.aop.learning.common.MyService.*(..))"/>
+        </aop:aspect>
     </aop:config>
 
 </beans>
