@@ -8,6 +8,7 @@
         <artifactId>aop-learning</artifactId>
         <groupId>org.burgers</groupId>
         <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <packaging>pom</packaging>
